@@ -60,5 +60,3 @@ jobs:
         - name: Upload build artifacts
           run: |
           echo "Uploading compliance reports..."
-          # Add your build and test commands here
-    
