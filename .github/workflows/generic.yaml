@@ -58,6 +58,7 @@ jobs:
           echo 'Build completed'
 
   publish_artifacts:
+    needs: test_and_build
     runs-on: ubuntu-latest
 
     steps:
