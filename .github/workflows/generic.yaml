@@ -1,11 +1,16 @@
 
 name: Generic Workflow
 on:
-  push:
-    branches: [features/*, main]
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      workflow_id:
+        description: 'The ID of the workflow to run'
+        required: false
+        type: string
+      inputs:
+        description: 'The inputs for the workflow'
+        required: false
+        type: string
 
 jobs:
   test_and_build:
@@ -58,4 +63,4 @@ jobs:
     steps:
       - name: Upload build artifacts
         run: |
-          run: echo "Uploading compliance reports..."
+          echo "Uploading compliance reports..."
