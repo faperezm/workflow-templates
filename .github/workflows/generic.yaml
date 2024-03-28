@@ -1,5 +1,5 @@
 
-name: Generic Workflow
+name: Generic SpringBoot Microservices Workflow
 on:
   workflow_call:
     inputs:
