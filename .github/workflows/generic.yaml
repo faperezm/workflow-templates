@@ -2,8 +2,7 @@
 name: Generic Workflow
 on:
   push:
-    branches:
-      - features/*
+    branches: [features/*, main]
   pull_request:
     branches:
       - main
