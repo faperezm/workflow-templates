@@ -17,9 +17,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4.1.2
       - name: Checkout from git repository
-        run: git checkout ${{ github.ref }}
+        uses: actions/checkout@v4.1.2
+        with:
+          repository: ${{ github.repository }}
+ 
+      
+       
       
       - name: Static Code Analysis (Sonarqube)
         run: |
