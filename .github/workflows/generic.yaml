@@ -15,3 +15,47 @@ jobs:
       - uses: actions/checkout@v4.1.2
       - name: Checkout from git repository
         run: git checkout ${{ github.ref }}
+      
+      - name: Static Code Analysis (Sonarqube)
+        run: |
+          echo "Static Code Analysis (Sonarqube)..."
+          # Add your build and test commands here
+      
+      - name: Software Composition Analysis (Snyk)
+        run: |
+          echo "Software Composition Analysis (Snyk)..."
+          # Add your build and test commands here
+      
+      - name: Unit Testing (JUnit)
+        run: |
+          echo "Unit Testing (JUnit)..."
+          # Add your build and test commands here
+
+      - name: Code Coverage (JaCoCo)
+        run: |
+          echo "Code Coverage (JaCoCo)..."
+          # Add your build and test commands here
+
+      - name: SonarQube Analysis
+        run: |
+          echo "SonarQube Analysis..."
+          # Add your build and test commands here
+
+      - name: Setup java 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+  
+      - name: Build with Maven
+        run: |
+          mvn -B clean package
+          echo 'Build completed'
+
+  publish_artifacts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Upload build artifacts
+        run: |
+          run: echo "Uploading compliance reports..."
