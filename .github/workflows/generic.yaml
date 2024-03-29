@@ -18,9 +18,10 @@ jobs:
 
     steps:
       - name: Checkout from git repository
-        uses: actions/checkout@v4.1.2
+        uses: actions/checkout@v2
         with:
           repository: ${{ github.repository }}
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
  
       
        
